@@ -80,7 +80,7 @@
                                     <p>
                                     {{$item->title}}   
                                     </p>
-                                    <a class="btn btn-custom" href="">View Now</a>
+                                    <a class="btn btn-custom" href="{{route('single.view',$item->id)}}}">View Now</a>
                                 </div>
                             </div>
                         </div>
