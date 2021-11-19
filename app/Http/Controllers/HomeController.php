@@ -42,6 +42,13 @@ class HomeController extends Controller
         return view('user.pages.events', compact('upcoming_event',  'completed_event'));
     }
 
+    public function single_event($id){
+        $event=Event::findOrFail($id);
+        return view('user.pages.single_event',compact('event'));
+    }
+
+
+
     public function blog(){
         return view('user.pages.blog');
     }

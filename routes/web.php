@@ -32,7 +32,7 @@ Route::get('/about',[HomeController::class,'about']);
 Route::get('/blog',[HomeController::class,'blog']);
 Route::get('/contact',[HomeController::class,'contact']);
 Route::get('/events',[HomeController::class,'events']);
-
+Route::get('/events/single/{id}',[HomeController::class,'single_event'])->name('single.view');
 
 
 //banner routes
@@ -62,4 +62,5 @@ Route::get('/admin/events/list',[EventController::class, 'event']);
 Route::get('/admin/events/edit/{id}',[EventController::class,'edit'])->name('event.edit');
 Route::get('/admin/events/delete/{id}',[EventController::class,'delete'])->name('event.delete');
 Route::put('/admin/events/update',[EventController::class,'update'])->name('event.update');
+
 
