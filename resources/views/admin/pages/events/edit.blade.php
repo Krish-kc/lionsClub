@@ -5,7 +5,7 @@
     <div class="container" style="width: 95rem;">
         <div class="col-md-8 offset-md-2">
             <div class="card">
-               <div class="card-header">Add Banner
+               <div class="card-header">Add Events
                <a href="" style="float:right;" class="btn btn-primary "> List</a>
                
                </div>

@@ -17,7 +17,7 @@ use App\Http\Controllers\EventController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return Redirect::to('/home');
 });
 
 Auth::routes();
@@ -62,5 +62,6 @@ Route::get('/admin/events/list',[EventController::class, 'event']);
 Route::get('/admin/events/edit/{id}',[EventController::class,'edit'])->name('event.edit');
 Route::get('/admin/events/delete/{id}',[EventController::class,'delete'])->name('event.delete');
 Route::put('/admin/events/update',[EventController::class,'update'])->name('event.update');
+
 
 

@@ -57,6 +57,9 @@ class EventController extends Controller
 
     }
 
+    
+    
+
     public function edit($id){
         $event=Event::findOrFail($id);
         return view('admin.pages.events.edit',compact('event'));
