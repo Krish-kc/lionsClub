@@ -25,6 +25,8 @@ class EventController extends Controller
             'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000',
         ]);
 
+        
+
         if($request->hasFile('image'))
         {
          $image=$request->file('image');
@@ -47,6 +49,7 @@ class EventController extends Controller
         $event->image=$imageName;
         $event->status=$request->status;
         $event->save();
+        
         toastr()->success('Event has Successfully created');
         return redirect('/admin/events/list');
     }
