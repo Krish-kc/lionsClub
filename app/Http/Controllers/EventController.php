@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use File;
 
 class EventController extends Controller
 {
@@ -24,6 +25,8 @@ class EventController extends Controller
             'ending_time' => 'required',
             'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000',
         ]);
+
+        
 
         if($request->hasFile('image'))
         {
@@ -66,16 +69,23 @@ class EventController extends Controller
     }
 
     public function update(Request $request){
+        $event=Event::findOrFail($request->id);
         if($request->hasFile('image'))
         {
-         $image=$request->file('image');
-         $imageName = time().'.'.$image->getClientOriginalExtension(); 
-         $image->move(public_path('event_image'), $imageName);
+            $destination ='event_image'.$event->image;
+            if(File::exists($destination))
+            {
+                File:: delete($destination);
+            }
+            $image=$request->file('image');
+            $extension = $image->getClientOriginalExtension();
+            $imageName = time(). '.' .$extension;
+            $image->move('event_image',$imageName);
+            $event->image=$imageName;
+
         }else{
-             $imageName=null;
- 
+            $imageName=$event->image;
         }
-        $event=Event::findOrFail($request->id);
 
         $event->update([
             'title'=>$request->title,
@@ -92,9 +102,16 @@ class EventController extends Controller
         return redirect('/admin/events/list');
     }
 
-    public function delete($id){
-        Event::find($id)->delete();
+    public function delete($id)
+    {
+        
+        $event=Event::find($id);
+        unlink("event_image/".$event->image);
+
+        Event::where("image", $event->image)->delete();
         toastr()->warning('Event has been delete successfully!');
-       return redirect('/admin/events/list');
+         return redirect('/admin/events/list');
+ 
+
     }
 }
