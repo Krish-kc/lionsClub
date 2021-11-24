@@ -96,6 +96,10 @@ Route::get('/admin/blog/edit/{id}',[BlogController::class,'edit'])->name('blog.e
 Route::put('/admin/blog/update/',[BlogController::class,'update'])->name('blog.update');
 
 
+Route::delete('/admin/blog/delete/{id}',[BlogController::class,'destroy'])->name('blog.delete');
+
+
+
 
 
 

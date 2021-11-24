@@ -46,7 +46,7 @@
                         </tr>
                         <div id="deletemodal" class="modal fade">
                             <div class="modal-dialog modal-confirm">
-                            <form action="" method="POST" id="deletebanner">
+                            <form action="{{route('blog.delete',$item->id)}}" method="POST" id="deletebanner">
                               @csrf
                               @method('DELETE')
                               
