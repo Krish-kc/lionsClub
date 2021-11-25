@@ -29,13 +29,14 @@ class HomeController extends Controller
     public function index()
     {
         $events=Event::all();
-
+        $about = About::all();
         $banner=Banner::where('status','on')->get();
-        return view('user.pages.home',compact('banner'));
+        return view('user.pages.home',compact('banner','about'));
     }
 
     public function about(){
-        return view('user.pages.about');
+        $about = About::all();
+        return view('user.pages.about', compact('about'));
     }
 
     public function events(){
@@ -52,7 +53,12 @@ class HomeController extends Controller
 
 
     public function blog(){
-        return view('user.pages.blog');
+        $blog = Blog::all();
+        return view('user.pages.blog', compact('blog'));
+    }
+
+    public function causes(){
+        return view('user.pages.causes');
     }
 
     public function contact(){

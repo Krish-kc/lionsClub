@@ -100,7 +100,6 @@ class BannnerController extends Controller
 
     public function changeStatus(Request $request)
     {
-        dd(fuck);
         $order = Banner::find($request->id);
         $order->status = $request->status;
         $order->save();
@@ -111,7 +110,7 @@ class BannnerController extends Controller
 
     public function destroy($id)
     {
-        
+        dd($id);
         $banner=Banner::find($id);
         unlink("banner_image/".$banner->image);
 

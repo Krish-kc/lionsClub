@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Lions Clube Nepal</title>
+        <title>Lions Club Nepal</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Free Website Template" name="keywords">
         <meta content="Free Website Template" name="description">
@@ -68,7 +68,7 @@
                     <div class="navbar-nav ml-auto">
                         <a href="/home" class="nav-item nav-link active">Home</a>
                         <a href="/about" class="nav-item nav-link">About</a>
-                        <a href="causes.html" class="nav-item nav-link">Causes</a>
+                        <a href="causes" class="nav-item nav-link">Causes</a>
                         <a href="/events" class="nav-item nav-link">Events</a>
                         <a href="/blog" class="nav-item nav-link">Blog</a>
                         <div class="nav-item dropdown">
@@ -149,7 +149,7 @@
                         <p>&copy; <a href="#">Your Site Name</a>, All Right Reserved.</p>
                     </div>
                     <div class="col-md-6">
-                        <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                        <p>Designed By <a href="https://htmlcodex.com">Krish kc</a></p>
                     </div>
                 </div>
             </div>

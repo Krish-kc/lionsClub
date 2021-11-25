@@ -21,21 +21,22 @@
         
         <!-- Blog Start -->
         <div class="blog">
+            @foreach ($blog as $item)
             <div class="container">
                 <div class="section-header text-center">
                     <p>Our Blog</p>
-                    <h2>Latest news & articles directly from our blog</h2>
+                    <h2>{{$item->title}}</h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="blog-item">
                             <div class="blog-img">
-                                <img src="img/blog-1.jpg" alt="Image">
+                                <img src="{{asset('blog_image')}}/{{$item->image}}" alt="Image">
                             </div>
                             <div class="blog-text">
                                 <h3><a href="#">Lorem ipsum dolor sit</a></h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
+                                    {{$item->discription}}
                                 </p>
                             </div>
                             <div class="blog-meta">
@@ -47,7 +48,7 @@
                     <div class="col-lg-4">
                         <div class="blog-item">
                             <div class="blog-img">
-                                <img src="img/blog-2.jpg" alt="Image">
+                                <img src="" alt="Image">
                             </div>
                             <div class="blog-text">
                                 <h3><a href="#">Lorem ipsum dolor sit</a></h3>
@@ -141,6 +142,7 @@
                         </ul> 
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
         <!-- Blog End -->

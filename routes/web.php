@@ -33,6 +33,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin', [AdminController::class,'AdminHome']);
 Route::get('/about',[HomeController::class,'about']);
 Route::get('/blog',[HomeController::class,'blog']);
+Route::get('/causes',[HomeController::class,'causes']);
 Route::get('/contact',[HomeController::class,'contact']);
 Route::get('/events',[HomeController::class,'events']);
 Route::get('/events/single/{id}',[HomeController::class,'single_event'])->name('single.view');
